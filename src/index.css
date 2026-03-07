@@ -1,0 +1,56 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.hero-bg-shape {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.hero-bg-shape-top {
+  width: 18rem;
+  height: 18rem;
+  top: -6rem;
+  right: -4rem;
+  background: #86d2ad;
+}
+
+.hero-bg-shape-bottom {
+  width: 14rem;
+  height: 14rem;
+  left: -3rem;
+  bottom: -4rem;
+  background: #f5b5b5;
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
