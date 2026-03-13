@@ -6,7 +6,7 @@ function ContactSection() {
   const { contact } = siteContent;
 
   return (
-    <section id="contact" className="scroll-mt-24 bg-slate-100 py-16 sm:py-20">
+    <section id="contact" className="scroll-mt-24 bg-slate-100 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Reach Out"
@@ -54,26 +54,16 @@ function ContactSection() {
 
           <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
             <h3 className="text-lg font-semibold text-slate-900">Send a Message</h3>
-            <p className="mt-4 text-sm leading-6 text-slate-700">{contact.messageBlurb}</p>
-            <div className="mt-4 rounded-2xl border border-brand-green/20 bg-brand-greenSoft p-5">
-              <p className="text-sm leading-6 text-slate-700">
-                Clicking the button below opens your default email app and starts a message to{' '}
-                <a
-                  href={contact.mailtoLink}
-                  className="font-semibold text-brand-green transition hover:text-brand-greenDark"
-                >
-                  {contact.email}
-                </a>{' '}
-                with the subject line "Message from Good Seed Fellowship Website."
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href={contact.mailtoLink}>Send Us a Message</Button>
+            <p className="mt-3 text-sm leading-6 text-slate-700">{contact.messageBlurb}</p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button href={contact.mailtoLink} className="w-full justify-center sm:w-auto">
+                Send Us a Message
+              </Button>
               <a
                 href="https://groupme.com/join_group/113682070/e5jNFBYh"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-brand-green px-5 py-2.5 text-sm font-semibold text-brand-green transition hover:bg-brand-greenSoft"
+                className="inline-flex w-full items-center justify-center rounded-full border border-brand-green px-5 py-2.5 text-sm font-semibold text-brand-green transition hover:bg-brand-greenSoft sm:w-auto"
               >
                 Join our GroupMe
               </a>
@@ -81,14 +71,11 @@ function ContactSection() {
                 href="https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-brand-green hover:text-brand-green"
+                className="inline-flex w-full items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-brand-green hover:text-brand-green sm:w-auto"
               >
                 Instagram
               </a>
             </div>
-            <p className="mt-4 text-xs leading-5 text-slate-500">
-              Messages from this section go directly to {contact.email}.
-            </p>
           </article>
         </div>
       </div>

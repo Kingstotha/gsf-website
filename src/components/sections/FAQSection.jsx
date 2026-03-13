@@ -7,7 +7,7 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="scroll-mt-24 bg-white py-16 sm:py-20">
+    <section id="faq" className="scroll-mt-24 bg-slate-50 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Questions"

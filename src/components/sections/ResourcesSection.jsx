@@ -4,7 +4,7 @@ import Card from '../ui/Card';
 
 function ResourcesSection() {
   return (
-    <section id="resources" className="scroll-mt-24 bg-slate-50 py-16 sm:py-20">
+    <section id="resources" className="scroll-mt-24 bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Stay Connected"
@@ -17,6 +17,7 @@ function ResourcesSection() {
           {siteContent.resources.map((resource) => (
             <Card
               key={resource.title}
+              icon={resource.icon}
               title={resource.title}
               description={resource.description}
               linkLabel={resource.linkLabel}

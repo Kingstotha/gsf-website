@@ -1,7 +1,6 @@
-﻿export const navLinks = [
+export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Mission', href: '#mission' },
   { label: 'Programs', href: '#programs' },
   { label: 'Resources', href: '#resources' },
   { label: 'FAQ', href: '#faq' },
@@ -19,6 +18,7 @@ export const siteContent = {
     title: 'Grow in Faith, Build Community, Live with Purpose',
     subtitle:
       'A welcoming Christian fellowship for students at USF seeking spiritual growth, Bible-centered learning, and authentic community.',
+    verse: '"I am the vine; you are the branches." — John 15:5',
     ctaPrimary: {
       label: 'Get Connected',
       href: '#contact'
@@ -36,25 +36,29 @@ export const siteContent = {
   mission: {
     title: 'Mission & Overview',
     description:
-      'Our mission is to help students know Christ, grow in biblical truth, and reflect God\'s love in everyday life. Through weekly gatherings, spiritual mentorship, and community outreach, we encourage students to thrive spiritually, academically, and socially.'
+      "Our mission is to help students know Christ, grow in biblical truth, and reflect God's love in everyday life. Through weekly gatherings, spiritual mentorship, and community outreach, we encourage students to thrive spiritually, academically, and socially."
   },
   programs: [
     {
+      icon: '📖',
       title: 'Weekly Bible Study',
       description:
         'Interactive sessions focused on understanding Scripture and applying it to campus life.'
     },
     {
+      icon: '🙏',
       title: 'Prayer Circles',
       description:
         'Small group prayer meetings where students pray together, share burdens, and encourage one another.'
     },
     {
+      icon: '🎉',
       title: 'New Student Welcome',
       description:
         'Connection events designed to help new and returning students build Christ-centered friendships.'
     },
     {
+      icon: '🌱',
       title: 'Mentorship & Discipleship',
       description:
         'One-on-one and small-group mentorship for spiritual growth, accountability, and leadership development.'
@@ -62,6 +66,7 @@ export const siteContent = {
   ],
   resources: [
     {
+      icon: '💬',
       title: 'New Members GroupMe',
       description:
         'Join our GroupMe to meet the fellowship, receive updates, and stay connected as you get to know the community.',
@@ -69,6 +74,7 @@ export const siteContent = {
       linkLabel: 'Join our GroupMe'
     },
     {
+      icon: '📸',
       title: 'Instagram',
       description:
         'Follow Good Seed Fellowship on Instagram for fellowship highlights, announcements, and upcoming event reminders.',
@@ -76,6 +82,7 @@ export const siteContent = {
       linkLabel: 'Follow on Instagram'
     },
     {
+      icon: '✉️',
       title: 'Email GSF',
       description:
         'For questions, prayer requests, or first-time visit details, reach us directly by email and our team will follow up.',
@@ -112,7 +119,7 @@ export const siteContent = {
     mailtoLink:
       'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website',
     messageBlurb:
-      'For questions, prayer requests, or details about visiting Good Seed Fellowship, email us directly and we will be glad to connect with you.',
+      "Email us directly and we'll be glad to connect with you.",
     social: [
       {
         label: 'Instagram',
@@ -127,6 +134,7 @@ export const siteContent = {
   footer: {
     quickLinks: [
       { label: 'Home', href: '#home' },
+      { label: 'About', href: '#about' },
       { label: 'Programs', href: '#programs' },
       { label: 'Resources', href: '#resources' },
       { label: 'Contact', href: '#contact' }
@@ -145,7 +153,6 @@ export const siteContent = {
         href: 'https://groupme.com/join_group/113682070/e5jNFBYh'
       }
     ],
-    copyright: `(c) ${new Date().getFullYear()} Good Seed Fellowship (GSF). All rights reserved.`
+    copyright: '© 2025 Good Seed Fellowship — University of South Florida'
   }
 };
-
