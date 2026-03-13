@@ -62,19 +62,25 @@ export const siteContent = {
   ],
   resources: [
     {
-      title: 'GSF Link Hub',
-      description: 'Placeholder for GroupMe, Linktree, and other official GSF links.',
-      url: 'https://example.com'
+      title: 'New Members GroupMe',
+      description:
+        'Join our GroupMe to meet the fellowship, receive updates, and stay connected as you get to know the community.',
+      url: 'https://groupme.com/join_group/113682070/e5jNFBYh',
+      linkLabel: 'Join our GroupMe'
     },
     {
-      title: 'Campus Support Services',
-      description: 'Helpful student support resources available at the University of South Florida.',
-      url: 'https://www.usf.edu'
+      title: 'Instagram',
+      description:
+        'Follow Good Seed Fellowship on Instagram for fellowship highlights, announcements, and upcoming event reminders.',
+      url: 'https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0',
+      linkLabel: 'Follow on Instagram'
     },
     {
-      title: 'RCCG Global',
-      description: 'Learn more about The Redeemed Christian Church of God and global initiatives.',
-      url: 'https://www.rccg.org'
+      title: 'Email GSF',
+      description:
+        'For questions, prayer requests, or first-time visit details, reach us directly by email and our team will follow up.',
+      url: 'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website',
+      linkLabel: 'Email Good Seed Fellowship'
     }
   ],
   faqs: [
@@ -96,16 +102,26 @@ export const siteContent = {
     {
       question: 'How can I stay updated?',
       answer:
-        'Use the Contact section and resource links to follow updates once official communication channels are published.'
+        'Join our GroupMe and follow our Instagram page for the latest Good Seed Fellowship updates, reminders, and community news.'
     }
   ],
   contact: {
-    email: 'hello@gsf-usf.org',
-    phone: '(000) 000-0000',
+    email: 'goodseedfellowship1@gmail.com',
+    phone: '+1 (813) 966-8180',
     location: 'University of South Florida, Tampa, FL',
+    mailtoLink:
+      'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website',
+    messageBlurb:
+      'For questions, prayer requests, or details about visiting Good Seed Fellowship, email us directly and we will be glad to connect with you.',
     social: [
-      { label: 'Instagram', url: 'https://example.com' },
-      { label: 'YouTube', url: 'https://example.com' }
+      {
+        label: 'Instagram',
+        url: 'https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0'
+      },
+      {
+        label: 'New Members GroupMe',
+        url: 'https://groupme.com/join_group/113682070/e5jNFBYh'
+      }
     ]
   },
   footer: {
@@ -115,9 +131,19 @@ export const siteContent = {
       { label: 'Resources', href: '#resources' },
       { label: 'Contact', href: '#contact' }
     ],
-    legalLinks: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Use', href: '#' }
+    connectLinks: [
+      {
+        label: 'Email Us',
+        href: 'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website'
+      },
+      {
+        label: 'Instagram',
+        href: 'https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0'
+      },
+      {
+        label: 'Join our GroupMe',
+        href: 'https://groupme.com/join_group/113682070/e5jNFBYh'
+      }
     ],
     copyright: `(c) ${new Date().getFullYear()} Good Seed Fellowship (GSF). All rights reserved.`
   }

@@ -8,8 +8,8 @@ function ResourcesSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Stay Connected"
-          title="Resources & Important Links"
-          description="Replace these placeholders with your official communication channels and ministry resources when available."
+          title="Community & Important Links"
+          description="Stay connected with Good Seed Fellowship through our official community channels and direct contact options."
           centered
         />
 
@@ -19,7 +19,7 @@ function ResourcesSection() {
               key={resource.title}
               title={resource.title}
               description={resource.description}
-              linkLabel="Open link"
+              linkLabel={resource.linkLabel}
               linkUrl={resource.url}
             />
           ))}

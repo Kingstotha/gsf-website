@@ -29,11 +29,16 @@ function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Important</h3>
+          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Connect</h3>
           <ul className="space-y-3 text-sm">
-            {footer.legalLinks.map((link) => (
+            {footer.connectLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="text-slate-300 transition hover:text-white">
+                <a
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                  className="text-slate-300 transition hover:text-white"
+                >
                   {link.label}
                 </a>
               </li>

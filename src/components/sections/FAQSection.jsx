@@ -12,7 +12,7 @@ function FAQSection() {
         <SectionHeader
           eyebrow="Questions"
           title="Frequently Asked Questions"
-          description="These are starter answers and can be replaced as your team finalizes official communication details."
+          description="A few common questions from students who are getting to know Good Seed Fellowship."
           centered
         />
 
