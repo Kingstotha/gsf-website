@@ -10,7 +10,10 @@ function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
-    const allSectionIds = ['home', 'about', 'mission', 'programs', 'resources', 'faq', 'contact'];
+    const allSectionIds = [
+      ...navLinks.map((link) => link.href.slice(1)),
+      'mission'
+    ];
     const sections = allSectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
     const observer = new IntersectionObserver(
@@ -21,7 +24,7 @@ function Navbar() {
           }
         });
       },
-      { rootMargin: '-10% 0px -80% 0px' }
+      { rootMargin: '-15% 0px -70% 0px' }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -29,15 +32,20 @@ function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 shadow-sm shadow-slate-900/5 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#home" aria-label="Go to home" onClick={closeMenu}>
+        <a
+          href="#home"
+          aria-label="Go to home"
+          onClick={closeMenu}
+          className="rounded-full transition duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/50 focus-visible:ring-offset-2"
+        >
           <LogoMark compact />
         </a>
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-300 text-slate-700 md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-brand-green/40 hover:bg-brand-greenSoft hover:text-brand-green md:hidden"
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
@@ -53,7 +61,7 @@ function Navbar() {
           )}
         </button>
 
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
           {navLinks.map((link) => {
             const sectionId = link.href.slice(1);
             const isActive =
@@ -63,10 +71,10 @@ function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition ${
+                className={`rounded-full px-3 py-2 text-sm font-medium transition duration-300 ${
                   isActive
-                    ? 'font-semibold text-brand-green'
-                    : 'text-slate-700 hover:text-brand-green'
+                    ? 'bg-brand-greenSoft font-semibold text-brand-green'
+                    : 'text-slate-700 hover:bg-slate-100 hover:text-brand-green'
                 }`}
               >
                 {link.label}
@@ -80,7 +88,7 @@ function Navbar() {
       </div>
 
       <div
-        className={`border-t border-slate-200 bg-white px-4 pb-4 pt-2 md:hidden ${
+        className={`border-t border-slate-200 bg-white/95 px-4 pb-4 pt-2 shadow-lg shadow-slate-900/5 backdrop-blur-xl md:hidden ${
           isMenuOpen ? 'block' : 'hidden'
         }`}
       >
@@ -94,7 +102,7 @@ function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition ${
+                className={`rounded-xl px-3 py-2.5 text-sm font-medium transition duration-300 ${
                   isActive
                     ? 'bg-brand-greenSoft font-semibold text-brand-green'
                     : 'text-slate-700 hover:bg-brand-greenSoft hover:text-brand-green'

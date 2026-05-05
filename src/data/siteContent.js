@@ -1,6 +1,7 @@
 export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Events', href: '#events' },
   { label: 'Programs', href: '#programs' },
   { label: 'Resources', href: '#resources' },
   { label: 'FAQ', href: '#faq' },
@@ -18,14 +19,14 @@ export const siteContent = {
     title: 'Grow in Faith, Build Community, Live with Purpose',
     subtitle:
       'A welcoming Christian fellowship for students at USF seeking spiritual growth, Bible-centered learning, and authentic community.',
-    verse: '"I am the vine; you are the branches." — John 15:5',
+    verse: '"I am the vine; you are the branches." - John 15:5',
     ctaPrimary: {
       label: 'Get Connected',
       href: '#contact'
     },
     ctaSecondary: {
-      label: 'Explore Programs',
-      href: '#programs'
+      label: 'View Events',
+      href: '#events'
     }
   },
   about: {
@@ -40,25 +41,25 @@ export const siteContent = {
   },
   programs: [
     {
-      icon: '📖',
+      icon: 'BS',
       title: 'Weekly Bible Study',
       description:
         'Interactive sessions focused on understanding Scripture and applying it to campus life.'
     },
     {
-      icon: '🙏',
+      icon: 'PR',
       title: 'Prayer Circles',
       description:
         'Small group prayer meetings where students pray together, share burdens, and encourage one another.'
     },
     {
-      icon: '🎉',
+      icon: 'NW',
       title: 'New Student Welcome',
       description:
         'Connection events designed to help new and returning students build Christ-centered friendships.'
     },
     {
-      icon: '🌱',
+      icon: 'MD',
       title: 'Mentorship & Discipleship',
       description:
         'One-on-one and small-group mentorship for spiritual growth, accountability, and leadership development.'
@@ -66,7 +67,7 @@ export const siteContent = {
   ],
   resources: [
     {
-      icon: '💬',
+      icon: 'GM',
       title: 'New Members GroupMe',
       description:
         'Join our GroupMe to meet the fellowship, receive updates, and stay connected as you get to know the community.',
@@ -74,7 +75,7 @@ export const siteContent = {
       linkLabel: 'Join our GroupMe'
     },
     {
-      icon: '📸',
+      icon: 'IG',
       title: 'Instagram',
       description:
         'Follow Good Seed Fellowship on Instagram for fellowship highlights, announcements, and upcoming event reminders.',
@@ -82,7 +83,7 @@ export const siteContent = {
       linkLabel: 'Follow on Instagram'
     },
     {
-      icon: '✉️',
+      icon: 'EM',
       title: 'Email GSF',
       description:
         'For questions, prayer requests, or first-time visit details, reach us directly by email and our team will follow up.',
@@ -104,7 +105,7 @@ export const siteContent = {
     {
       question: 'How often do you meet?',
       answer:
-        'We hold regular weekly gatherings and occasional special events. Official schedules will be shared soon.'
+        'We hold regular gatherings and occasional special events. Upcoming dates and room locations are listed in the Events section.'
     },
     {
       question: 'How can I stay updated?',
@@ -135,6 +136,7 @@ export const siteContent = {
     quickLinks: [
       { label: 'Home', href: '#home' },
       { label: 'About', href: '#about' },
+      { label: 'Events', href: '#events' },
       { label: 'Programs', href: '#programs' },
       { label: 'Resources', href: '#resources' },
       { label: 'Contact', href: '#contact' }
@@ -153,6 +155,6 @@ export const siteContent = {
         href: 'https://groupme.com/join_group/113682070/e5jNFBYh'
       }
     ],
-    copyright: '© 2025 Good Seed Fellowship — University of South Florida'
+    copyright: 'Copyright 2026 Good Seed Fellowship - University of South Florida'
   }
 };

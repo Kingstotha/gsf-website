@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -13,13 +14,26 @@ body {
   font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
   color: #0f172a;
   background: #ffffff;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #eaf6ef;
+  color: #125233;
+}
+
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 18% 20%, rgba(28, 122, 75, 0.12), transparent 28%),
+    radial-gradient(circle at 82% 14%, rgba(179, 57, 57, 0.12), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.64) 0%, rgba(247, 246, 241, 0.92) 45%, rgba(234, 246, 239, 0.78) 100%);
 }
 
 .hero-bg-shape {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(40px);
-  opacity: 0.45;
+  filter: blur(44px);
+  opacity: 0.42;
   pointer-events: none;
 }
 
@@ -52,5 +66,20 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

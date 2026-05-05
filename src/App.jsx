@@ -3,6 +3,7 @@ import Footer from './components/layout/Footer';
 import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
 import MissionSection from './components/sections/MissionSection';
+import UpcomingEvents from './components/sections/UpcomingEvents';
 import ProgramsSection from './components/sections/ProgramsSection';
 import ResourcesSection from './components/sections/ResourcesSection';
 import FAQSection from './components/sections/FAQSection';
@@ -16,6 +17,7 @@ function App() {
         <HeroSection />
         <AboutSection />
         <MissionSection />
+        <UpcomingEvents />
         <ProgramsSection />
         <ResourcesSection />
         <FAQSection />

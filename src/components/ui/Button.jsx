@@ -1,8 +1,10 @@
-﻿const variants = {
+const variants = {
   primary:
-    'bg-brand-green text-white hover:bg-brand-greenDark focus-visible:ring-brand-green/60',
+    'bg-brand-green text-white shadow-lg shadow-brand-green/20 hover:-translate-y-0.5 hover:bg-brand-greenDark hover:shadow-xl hover:shadow-brand-green/25 focus-visible:ring-brand-green/60',
   secondary:
-    'border border-brand-green text-brand-green hover:bg-brand-greenSoft focus-visible:ring-brand-green/40'
+    'border border-brand-green/40 bg-white text-brand-green shadow-sm hover:-translate-y-0.5 hover:border-brand-green hover:bg-brand-greenSoft hover:shadow-md focus-visible:ring-brand-green/40',
+  light:
+    'bg-white text-brand-green shadow-lg shadow-black/10 hover:-translate-y-0.5 hover:bg-brand-greenSoft hover:shadow-xl focus-visible:ring-white/70'
 };
 
 function Button({ href, children, variant = 'primary', className = '', type = 'button' }) {

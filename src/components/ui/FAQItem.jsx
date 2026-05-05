@@ -1,17 +1,17 @@
-﻿function FAQItem({ item, isOpen, onToggle, id }) {
+function FAQItem({ item, isOpen, onToggle, id }) {
   return (
-    <article className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+    <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-brand-green/25 hover:shadow-md">
       <h3>
         <button
           type="button"
           onClick={onToggle}
-          className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-900"
+          className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-950 transition hover:bg-slate-50"
           aria-expanded={isOpen}
           aria-controls={`faq-answer-${id}`}
         >
           {item.question}
           <span
-            className={`text-brand-green transition-transform duration-300 ${
+            className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-greenSoft text-brand-green transition duration-300 ${
               isOpen ? 'rotate-45' : 'rotate-0'
             }`}
             aria-hidden="true"
