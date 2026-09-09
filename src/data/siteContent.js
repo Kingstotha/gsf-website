@@ -53,7 +53,7 @@ export const siteContent = {
     paragraphs: [
       'Good Seed Fellowship is a Bible study for students at the University of South Florida, run under The Redeemed Christian Church of God. It meets on Friday nights, an hour and forty-five minutes at a time, in the Marshall Student Center (the MSC).',
       'The room changes most weeks, which is why it’s at the top of this page.',
-      'Any USF student can come.'
+      'It’s a small, growing group, and anyone can come, USF student or not.'
     ]
   },
 
@@ -72,7 +72,7 @@ export const siteContent = {
     items: [
       {
         title: 'Bible study.',
-        body: 'The usual Friday, 7:00 to 8:45 PM. A night that starts at 7:30 instead says so on its row of the schedule.'
+        body: 'The usual Friday, 7:00 to 8:45 PM. The first fifteen minutes or so are greetings, introductions and discussion; then worship, prayer and the study. A night that starts at 7:30 instead says so on its row of the schedule.'
       },
       {
         title: 'Game night.',
@@ -85,17 +85,29 @@ export const siteContent = {
     heading: 'Questions',
     items: [
       {
-        question: 'Do I have to be RCCG, or Nigerian, to come?',
+        question: 'Do I have to be RCCG, or Nigerian, or a USF student, to come?',
         answer:
-          'No. Any USF student can come. GSF runs under The Redeemed Christian Church of God (RCCG), but you don’t have to be part of RCCG, or from anywhere in particular, to show up.'
+          'No. Anyone can come. GSF runs under The Redeemed Christian Church of God (RCCG), but you don’t have to be part of RCCG, or from anywhere in particular, or enrolled at USF, to show up.'
       },
       {
         question: 'Is it okay to come if I’m not sure what I believe?',
-        answer: 'Yes. Any USF student can come, whatever they believe.'
+        answer: 'Yes. Anyone can come, whatever they believe.'
+      },
+      {
+        question: 'Will I be asked to read or pray out loud?',
+        answer: 'Only if you’re comfortable with it.'
       },
       {
         question: 'Do I need to bring a Bible?',
-        answer: 'Bring one if you have one. A Bible app on your phone works too.'
+        answer: 'Bring one if you have one. A Bible app on your phone is fine; nobody minds if everything’s digital.'
+      },
+      {
+        question: 'Can I come late or leave early?',
+        answer: 'Yes. Come and go as you need to.'
+      },
+      {
+        question: 'Is there food?',
+        answer: 'Most Fridays, yes, and always at game night.'
       },
       {
         question: 'Where is the Marshall Student Center?',
@@ -109,11 +121,7 @@ export const siteContent = {
       {
         question: 'How do I know if the room changed?',
         answer:
-          'The room at the top of this page and the schedule above both come from the MSC reservation, so a room shown here is booked. If you’re at the door and something looks off, ask in the GroupMe.'
-      },
-      {
-        question: 'Is there food?',
-        answer: 'At both game nights, yes. They’re the two Fridays marked Game night on the schedule.'
+          'Room changes go out in the GroupMe before Friday. If you’re at the door and something looks off, message the GroupMe or call the number at the bottom of this page.'
       }
     ]
   },
@@ -130,14 +138,15 @@ export const siteContent = {
       {
         label: 'Phone',
         value: links.phone,
-        href: links.tel
+        href: links.tel,
+        note: 'Someone answers on Friday evenings.'
       },
       {
         label: 'GroupMe',
         value: `Join the ${links.groupme.name}`,
         href: links.groupme.url,
         external: true,
-        note: 'A group chat for people new to GSF.'
+        note: 'A group chat for people new to GSF. Room changes are posted there before Friday.'
       },
       {
         label: 'Instagram',
