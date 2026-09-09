@@ -1,27 +1,25 @@
-﻿import Navbar from './components/layout/Navbar';
+import Masthead from './components/layout/Masthead';
 import Footer from './components/layout/Footer';
-import HeroSection from './components/sections/HeroSection';
-import AboutSection from './components/sections/AboutSection';
-import MissionSection from './components/sections/MissionSection';
-import UpcomingEvents from './components/sections/UpcomingEvents';
-import ProgramsSection from './components/sections/ProgramsSection';
-import ResourcesSection from './components/sections/ResourcesSection';
-import FAQSection from './components/sections/FAQSection';
-import ContactSection from './components/sections/ContactSection';
+import Plaque from './components/sections/Plaque';
+import About from './components/sections/About';
+import Schedule from './components/sections/Schedule';
+import Fridays from './components/sections/Fridays';
+import PhotoStrip from './components/sections/PhotoStrip';
+import Questions from './components/sections/Questions';
+import Contact from './components/sections/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <Navbar />
+    <div className="min-h-screen bg-paper text-ink">
+      <Masthead />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <MissionSection />
-        <UpcomingEvents />
-        <ProgramsSection />
-        <ResourcesSection />
-        <FAQSection />
-        <ContactSection />
+        <Plaque />
+        <About />
+        <Schedule />
+        <Fridays />
+        <PhotoStrip />
+        <Questions />
+        <Contact />
       </main>
       <Footer />
     </div>

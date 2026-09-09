@@ -13,7 +13,7 @@ week*. The page exists to answer "which room is it this Friday?" Everything else
 | Pencil     | `#5B5B5B` | Secondary text: floor notes, times, captions, footer lines. 6.9:1 on Paper. |
 | Hairline   | `#D4D4D4` | 1px rules between rows and sections. Never carries text. |
 | Green      | `#1C7A4B` | The RCCG anchor, spent in one place: this Friday's room number. Also text links and focus rings. 5.3:1 on Paper. |
-| Deep green | `#125233` | Link hover, and the fill of the small "Next" mark (white text, 9.2:1). |
+| Deep green | `#125233` | Link hover only. The "Next" mark on the schedule is the word in Green, unfilled, so there is no badge. |
 
 Removed from `tailwind.config.js`: greenSoft, red, redSoft, blue, cream, and the soft shadow.
 

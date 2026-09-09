@@ -40,7 +40,7 @@ export const events = [
     building: MSC,
     room: { number: '2707', name: 'Spirit Room' },
     food: false,
-    description: 'Two weeks after the first one; nothing on the 18th.'
+    description: 'No meeting the Friday before, September 18.'
   },
   {
     date: '2026-10-02',
@@ -52,7 +52,7 @@ export const events = [
     building: MSC,
     room: { number: '3712', name: 'Columbia Room' },
     food: true,
-    description: 'Games instead of Bible study, a later start, and the first third-floor room of the fall.'
+    description: 'Starts at 7:30 instead of the usual 7:00.'
   },
   {
     date: '2026-10-09',
@@ -64,7 +64,7 @@ export const events = [
     building: MSC,
     room: { number: '2703', name: 'Honors Room' },
     food: false,
-    description: 'Back to the usual 7:00 start.'
+    description: 'The Honors Room is booked twice this fall; this is the first.'
   },
   {
     date: '2026-10-16',
@@ -88,7 +88,7 @@ export const events = [
     building: MSC,
     room: { number: '2703', name: 'Honors Room' },
     food: true,
-    description: 'Second game night, same Honors Room as October 9.'
+    description: 'Second game night of the fall, back in the Honors Room.'
   },
   {
     date: '2026-11-13',
@@ -100,7 +100,7 @@ export const events = [
     building: MSC,
     room: { number: '3709', name: 'Heron Room' },
     food: false,
-    description: 'Last booked Friday of the fall.'
+    description: 'Last Friday booked so far this fall.'
   }
 
   // Unconfirmed. Uncomment once the room is booked.
