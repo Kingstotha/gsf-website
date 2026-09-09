@@ -15,3 +15,6 @@ codex-*.log
 
 # Stray nested clone of this repo
 /gsf-website/
+
+# Machine-local Claude Code permissions
+.claude/settings.local.json
