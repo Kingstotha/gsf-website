@@ -12,7 +12,9 @@ export default {
       pencil: '#5B5B5B',
       hairline: '#D4D4D4',
       green: '#1C7A4B',
-      deepgreen: '#125233'
+      deepgreen: '#125233',
+      mint: '#E7F3EC',
+      pale: '#BFE3CF'
     },
     fontFamily: {
       sans: ['Archivo', '"Helvetica Neue"', 'Arial', 'sans-serif']

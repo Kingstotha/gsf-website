@@ -71,11 +71,11 @@ export const siteContent = {
     heading: 'Fridays',
     items: [
       {
-        title: 'Bible study.',
+        title: 'Bible study',
         body: 'The usual Friday, 7:00 to 8:45 PM. The first fifteen minutes or so are greetings, introductions and discussion; then worship, prayer and the study. A night that starts at 7:30 instead says so on its row of the schedule.'
       },
       {
-        title: 'Game night.',
+        title: 'Game night',
         body: 'Games and food instead of Bible study. This fall there are two, both on the schedule.'
       }
     ]

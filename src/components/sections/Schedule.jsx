@@ -4,6 +4,7 @@ import { activeNotes, floorOf, getPageCurrent, shortDate, timeSpan, upcomingEven
 import Section from '../ui/Section';
 
 // One row of the schedule. Below md the cells stack; from md up it is a real table row.
+// The next row carries a green edge; game nights get a dashed rule and a green square.
 function ScheduleRow({ event, isNext }) {
   const { schedule } = siteContent;
   const isGameNight = event.kind === 'game-night';
@@ -13,28 +14,39 @@ function ScheduleRow({ event, isNext }) {
     <tr
       role="row"
       aria-current={isNext ? 'true' : undefined}
-      className={`block border-t md:table-row ${isGameNight ? 'border-dashed border-ink' : 'border-solid border-hairline'}`}
+      className={`block border-t md:table-row ${isGameNight ? 'border-dashed border-ink' : 'border-solid border-hairline'} ${
+        isNext ? 'bg-mint' : ''
+      }`}
     >
-      <td role="cell" className="block pt-5 align-top md:table-cell md:w-[8.5rem] md:py-5 md:pr-6">
+      <td
+        role="cell"
+        className={`block border-l-[3px] pl-3 pt-5 align-top md:table-cell md:w-[9rem] md:py-5 md:pr-6 ${
+          isNext ? 'border-l-green' : 'border-l-transparent'
+        }`}
+      >
         <span className="whitespace-nowrap text-base font-semibold">{shortDate(event.date)}</span>
         {isNext ? (
           <span className="ml-2 text-small font-semibold text-green md:ml-0 md:block">{schedule.nextLabel}</span>
         ) : null}
       </td>
 
-      <td role="cell" className="block pt-1 align-top md:table-cell md:min-w-[13rem] md:py-5 md:pr-6">
+      <td role="cell" className="block pl-[calc(0.75rem+3px)] pt-1 align-top md:table-cell md:min-w-[13rem] md:py-5 md:pl-0 md:pr-6">
         <span className="text-row">{event.room.number}</span>{' '}
         <span className="text-base font-medium">{event.room.name}</span>
         {floor ? <span className="block text-small text-pencil">{floor}</span> : null}
       </td>
 
-      <td role="cell" className="block pt-2 align-top md:table-cell md:w-[16rem] md:py-5 md:pr-6">
+      <td role="cell" className="block pl-[calc(0.75rem+3px)] pt-2 align-top md:table-cell md:w-[16rem] md:py-5 md:pl-0 md:pr-6">
+        {isGameNight ? <span className="mr-2 inline-block h-2.5 w-2.5 bg-green align-middle" aria-hidden="true" /> : null}
         <span className={`text-body ${isGameNight ? 'font-bold' : ''}`}>{event.title}</span>
         {event.food ? <span className="text-body">, {schedule.foodLabel}</span> : null}
         {event.description ? <span className="block text-small text-pencil">{event.description}</span> : null}
       </td>
 
-      <td role="cell" className="block pb-5 pt-1 align-top text-small text-pencil md:table-cell md:w-[7rem] md:py-5">
+      <td
+        role="cell"
+        className="block pb-5 pl-[calc(0.75rem+3px)] pr-3 pt-1 align-top text-small text-pencil md:table-cell md:w-[8rem] md:py-5 md:pl-0"
+      >
         {timeSpan(event)}
       </td>
     </tr>
@@ -54,7 +66,7 @@ function Schedule() {
       <p className="max-w-prose text-body">{schedule.intro}</p>
 
       {upcoming.length > 0 ? (
-        <table role="table" className="mt-8 block border-collapse border-b border-hairline md:table">
+        <table role="table" className="-ml-3 mt-8 block border-collapse border-b border-hairline md:table">
           <caption className="sr-only">{term} dates, rooms and times</caption>
           <thead role="rowgroup" className="sr-only">
             <tr role="row">

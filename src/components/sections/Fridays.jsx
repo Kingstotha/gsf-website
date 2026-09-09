@@ -1,16 +1,17 @@
 import { siteContent } from '../../data/siteContent';
 import Section from '../ui/Section';
 
-// The two kinds of Friday, as two run-in paragraphs. Two because two are verifiable.
+// The two kinds of Friday, side by side on a pale green tint, each with a green edge.
 function Fridays() {
   const { fridays } = siteContent;
   return (
-    <Section id="fridays" heading={fridays.heading}>
-      <div className="max-w-prose space-y-4 text-body">
+    <Section id="fridays" heading={fridays.heading} tone="mint">
+      <div className="grid gap-8 md:grid-cols-2 md:gap-12">
         {fridays.items.map((item) => (
-          <p key={item.title}>
-            <strong className="font-semibold">{item.title}</strong> {item.body}
-          </p>
+          <article key={item.title} className="border-l-[3px] border-green pl-5">
+            <h3 className="text-lead font-semibold">{item.title}</h3>
+            <p className="mt-2 text-body">{item.body}</p>
+          </article>
         ))}
       </div>
     </Section>

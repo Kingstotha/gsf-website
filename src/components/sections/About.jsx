@@ -5,9 +5,9 @@ import Seal from '../ui/Seal';
 function About() {
   const { about } = siteContent;
   return (
-    <section id="about" aria-label="About Good Seed Fellowship" className="border-t border-hairline">
-      <div className="wrap flex flex-col gap-8 py-10 sm:flex-row sm:items-start sm:py-14">
-        <Seal size={120} className="sm:mt-1" />
+    <section id="about" aria-label="About Good Seed Fellowship" className="bg-paper">
+      <div className="wrap flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:gap-12 sm:py-16">
+        <Seal size={140} className="sm:mt-1" />
         <div className="max-w-prose space-y-4 text-body">
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

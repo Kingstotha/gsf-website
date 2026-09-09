@@ -107,3 +107,14 @@ room number, name and floor; what and time on one line.
 - **Three resource cards with two-letter icons.** Generic. Folded into the Contact list.
 - **Logo in a ring in the hero.** Generic. The seal is shown once at real size beside the
   sentence its ring proves (the parent church), and small in the masthead and footer.
+
+## Revision, September 9, 2026
+
+The owner found the all-white version too plain, so colour and surfaces came back in a
+controlled way: the room number sits on a full-width deep green plaque (white type, pale
+green lead line); the Fridays section is a pale green tint with two green-edged columns;
+the next schedule row is tinted with a green edge and game nights carry a small green
+square; Contact and the footer are one dark ink block with the seal beside the list; the
+GroupMe button is filled green; headings carry a short green bar; and the plaque fades in
+once on load (off under reduced motion). Still absent on purpose: gradient blobs, uniform
+cards with shadows, all-caps eyebrow labels, hover lifts, and per-section animations.

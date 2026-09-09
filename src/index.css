@@ -28,7 +28,17 @@ body {
   }
 
   .link {
-    @apply text-green underline decoration-1 underline-offset-4 hover:text-deepgreen hover:decoration-2;
+    @apply text-green underline decoration-1 underline-offset-4 transition-colors duration-150 hover:text-deepgreen hover:decoration-2;
+  }
+
+  /* Links on the dark green plaque and the dark contact block. */
+  .link-on-dark {
+    @apply text-paper underline decoration-pale decoration-1 underline-offset-4 transition-colors duration-150 hover:text-pale hover:decoration-2;
+  }
+
+  /* The one piece of motion on the page: the plaque settles in once on load. */
+  .plaque-in {
+    animation: plaque-in 500ms ease-out both;
   }
 
   /* The room number in the hero: Archivo pulled wide and heavy, like a sign. */
@@ -45,6 +55,17 @@ body {
   .rule-double-up {
     height: 3px;
     border-top: 1px solid theme('colors.hairline');
+  }
+}
+
+@keyframes plaque-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 

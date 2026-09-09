@@ -75,8 +75,8 @@ function Masthead() {
                       href={link.href}
                       onClick={closeMenu}
                       aria-current={isActive ? 'location' : undefined}
-                      className={`block whitespace-nowrap py-2 text-nav font-medium underline-offset-[6px] hover:underline lg:py-0 ${
-                        isActive ? 'underline decoration-ink decoration-1' : 'no-underline'
+                      className={`block whitespace-nowrap py-2 text-nav font-medium underline-offset-[6px] transition-colors duration-150 hover:text-green hover:underline hover:decoration-green lg:py-0 ${
+                        isActive ? 'underline decoration-green decoration-2' : 'no-underline'
                       }`}
                     >
                       {link.label}
