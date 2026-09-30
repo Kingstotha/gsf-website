@@ -1,25 +1,10 @@
-// All the words on the site live here. Dates, rooms and times live in events.js.
-
-export const links = {
-  email: 'goodseedfellowship1@gmail.com',
-  mailto:
-    'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website',
-  phone: '+1 (813) 966-8180',
-  tel: 'tel:+18139668180',
-  instagram: {
-    handle: '@goodseedfellowship',
-    url: 'https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0'
-  },
-  groupme: {
-    name: 'New Members GroupMe',
-    url: 'https://groupme.com/join_group/113682070/e5jNFBYh'
-  }
-};
-
 export const navLinks = [
-  { label: 'Fall 2026', href: '#schedule' },
-  { label: 'Fridays', href: '#fridays' },
-  { label: 'Questions', href: '#questions' },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Events', href: '#events' },
+  { label: 'Programs', href: '#programs' },
+  { label: 'Resources', href: '#resources' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' }
 ];
 
@@ -27,144 +12,149 @@ export const siteContent = {
   brandName: 'Good Seed Fellowship',
   shortName: 'GSF',
   orgParent: 'The Redeemed Christian Church of God',
-  seal: {
-    alt: 'Seal of Good Seed Fellowship, The Redeemed Christian Church of God: a white dove on a black disc'
-  },
-
-  masthead: {
-    homeLabel: 'Good Seed Fellowship, back to the top',
-    menuLabel: 'Menu',
-    closeLabel: 'Close',
-    button: { label: 'Join the GroupMe', href: links.groupme.url }
-  },
-
+  tagline: 'Community through fellowship',
+  intro:
+    'Good Seed Fellowship (GSF) is a Christian fellowship and Bible study group at the University of South Florida. We gather to grow in faith, build meaningful friendships, and support one another in Christ-centered living on campus.',
   hero: {
-    scheduleLink: 'See the fall schedule',
-    groupmeLink: 'Join the GroupMe',
-    emailLink: 'Email us',
-    empty: {
-      headline: 'No date posted yet.',
-      lastLine: (date) => `The last booked Friday was ${date}.`,
-      body: 'Ask in the GroupMe or email us.'
+    title: 'Grow in Faith, Build Community, Live with Purpose',
+    subtitle:
+      'A welcoming Christian fellowship for students at USF seeking spiritual growth, Bible-centered learning, and authentic community.',
+    verse: '"I am the vine; you are the branches." - John 15:5',
+    ctaPrimary: {
+      label: 'Get Connected',
+      href: '#contact'
+    },
+    ctaSecondary: {
+      label: 'View Events',
+      href: '#events'
     }
   },
-
   about: {
-    paragraphs: [
-      'Good Seed Fellowship is a Bible study for students at the University of South Florida, run under The Redeemed Christian Church of God. It meets on Friday nights, an hour and forty-five minutes at a time, in the Marshall Student Center (the MSC).',
-      'The room changes most weeks, which is why it’s at the top of this page.',
-      'It’s a small, growing group, and anyone can come, USF student or not.'
-    ]
+    title: 'About GSF',
+    description:
+      'Good Seed Fellowship is a student-centered Christian community focused on prayer, Bible study, discipleship, and practical support for college life. Whether you are new to faith or looking for deeper growth, GSF offers a space to belong and flourish.'
   },
-
-  schedule: {
-    intro:
-      'Every date below comes from the MSC room reservation. If a Friday isn’t listed, no room is held for it yet.',
-    columns: { date: 'Date', room: 'Room', what: 'What', time: 'Time' },
-    nextLabel: 'Next',
-    foodLabel: 'with food',
-    empty: 'No dates are posted right now.',
-    emptyLinks: { groupme: 'Join the GroupMe', email: 'Email us' }
+  mission: {
+    title: 'Mission & Overview',
+    description:
+      "Our mission is to help students know Christ, grow in biblical truth, and reflect God's love in everyday life. Through weekly gatherings, spiritual mentorship, and community outreach, we encourage students to thrive spiritually, academically, and socially."
   },
-
-  fridays: {
-    heading: 'Fridays',
-    items: [
-      {
-        title: 'Bible study',
-        body: 'The usual Friday, 7:00 to 8:45 PM. The first fifteen minutes or so are greetings, introductions and discussion; then worship, prayer and the study. A night that starts at 7:30 instead says so on its row of the schedule.'
-      },
-      {
-        title: 'Game night',
-        body: 'Games and food instead of Bible study. This fall there are two, both on the schedule.'
-      }
-    ]
-  },
-
-  questions: {
-    heading: 'Questions',
-    items: [
-      {
-        question: 'Do I have to be RCCG, or Nigerian, or a USF student, to come?',
-        answer:
-          'No. Anyone can come. GSF runs under The Redeemed Christian Church of God (RCCG), but you don’t have to be part of RCCG, or from anywhere in particular, or enrolled at USF, to show up.'
-      },
-      {
-        question: 'Is it okay to come if I’m not sure what I believe?',
-        answer: 'Yes. Anyone can come, whatever they believe.'
-      },
-      {
-        question: 'Will I be asked to read or pray out loud?',
-        answer: 'Only if you’re comfortable with it.'
-      },
-      {
-        question: 'Do I need to bring a Bible?',
-        answer: 'Bring one if you have one. A Bible app on your phone is fine; nobody minds if everything’s digital.'
-      },
-      {
-        question: 'Can I come late or leave early?',
-        answer: 'Yes. Come and go as you need to.'
-      },
-      {
-        question: 'Is there food?',
-        answer: 'Most Fridays, yes, and always at game night.'
-      },
-      {
-        question: 'Where is the Marshall Student Center?',
-        answer: 'It’s the student union on USF’s Tampa campus. Every date this fall is inside it.'
-      },
-      {
-        question: 'How do I find the room once I’m inside?',
-        answer:
-          'Use the number. The first digit is the floor, so 2706 is on the second floor and 3709 is on the third. Each room has its name and number on the plaque by the door; match both to the room at the top of this page.'
-      },
-      {
-        question: 'How do I know if the room changed?',
-        answer:
-          'Room changes go out in the GroupMe before Friday. If you’re at the door and something looks off, message the GroupMe or call the number at the bottom of this page.'
-      }
-    ]
-  },
-
+  programs: [
+    {
+      icon: 'BS',
+      title: 'Weekly Bible Study',
+      description:
+        'Interactive sessions focused on understanding Scripture and applying it to campus life.'
+    },
+    {
+      icon: 'PR',
+      title: 'Prayer Circles',
+      description:
+        'Small group prayer meetings where students pray together, share burdens, and encourage one another.'
+    },
+    {
+      icon: 'NW',
+      title: 'New Student Welcome',
+      description:
+        'Connection events designed to help new and returning students build Christ-centered friendships.'
+    },
+    {
+      icon: 'MD',
+      title: 'Mentorship & Discipleship',
+      description:
+        'One-on-one and small-group mentorship for spiritual growth, accountability, and leadership development.'
+    }
+  ],
+  resources: [
+    {
+      icon: 'GM',
+      title: 'New Members GroupMe',
+      description:
+        'Join our GroupMe to meet the fellowship, receive updates, and stay connected as you get to know the community.',
+      url: 'https://groupme.com/join_group/113682070/e5jNFBYh',
+      linkLabel: 'Join our GroupMe'
+    },
+    {
+      icon: 'IG',
+      title: 'Instagram',
+      description:
+        'Follow Good Seed Fellowship on Instagram for fellowship highlights, announcements, and upcoming event reminders.',
+      url: 'https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0',
+      linkLabel: 'Follow on Instagram'
+    },
+    {
+      icon: 'EM',
+      title: 'Email GSF',
+      description:
+        'For questions, prayer requests, or first-time visit details, reach us directly by email and our team will follow up.',
+      url: 'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website',
+      linkLabel: 'Email Good Seed Fellowship'
+    }
+  ],
+  faqs: [
+    {
+      question: 'Who can join Good Seed Fellowship?',
+      answer:
+        'Any USF student interested in Christian fellowship, Bible study, and spiritual growth is welcome to join.'
+    },
+    {
+      question: 'Do I need prior Bible knowledge to attend?',
+      answer:
+        'Not at all. Our gatherings are open to everyone, including students exploring faith for the first time.'
+    },
+    {
+      question: 'How often do you meet?',
+      answer:
+        'We hold regular gatherings and occasional special events. Upcoming dates and room locations are listed in the Events section.'
+    },
+    {
+      question: 'How can I stay updated?',
+      answer:
+        'Join our GroupMe and follow our Instagram page for the latest Good Seed Fellowship updates, reminders, and community news.'
+    }
+  ],
   contact: {
-    heading: 'Contact',
-    rows: [
+    email: 'goodseedfellowship1@gmail.com',
+    phone: '+1 (813) 966-8180',
+    location: 'University of South Florida, Tampa, FL',
+    mailtoLink:
+      'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website',
+    messageBlurb:
+      "Email us directly and we'll be glad to connect with you.",
+    social: [
       {
-        label: 'Email',
-        value: links.email,
-        href: links.mailto,
-        note: 'Questions about a date or a room.'
+        label: 'Instagram',
+        url: 'https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0'
       },
       {
-        label: 'Phone',
-        value: links.phone,
-        href: links.tel,
-        note: 'Someone answers on Friday evenings.'
-      },
+        label: 'New Members GroupMe',
+        url: 'https://groupme.com/join_group/113682070/e5jNFBYh'
+      }
+    ]
+  },
+  footer: {
+    quickLinks: [
+      { label: 'Home', href: '#home' },
+      { label: 'About', href: '#about' },
+      { label: 'Events', href: '#events' },
+      { label: 'Programs', href: '#programs' },
+      { label: 'Resources', href: '#resources' },
+      { label: 'Contact', href: '#contact' }
+    ],
+    connectLinks: [
       {
-        label: 'GroupMe',
-        value: `Join the ${links.groupme.name}`,
-        href: links.groupme.url,
-        external: true,
-        note: 'A group chat for people new to GSF. Room changes are posted there before Friday.'
+        label: 'Email Us',
+        href: 'mailto:goodseedfellowship1@gmail.com?subject=Message%20from%20Good%20Seed%20Fellowship%20Website'
       },
       {
         label: 'Instagram',
-        value: links.instagram.handle,
-        href: links.instagram.url,
-        external: true
+        href: 'https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0'
       },
       {
-        label: 'Where',
-        value: 'University of South Florida, Tampa, FL',
-        note: 'On Friday nights, the Marshall Student Center.'
+        label: 'Join our GroupMe',
+        href: 'https://groupme.com/join_group/113682070/e5jNFBYh'
       }
-    ]
-  },
-
-  footer: {
-    parentLine: 'Good Seed Fellowship is part of The Redeemed Christian Church of God.',
-    verse: '“I am the vine; you are the branches.” John 15:5',
+    ],
     copyright: 'Copyright 2026 Good Seed Fellowship - University of South Florida'
   }
 };

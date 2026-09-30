@@ -1,71 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 1rem;
+  scroll-padding-top: 5rem;
 }
 
 body {
   margin: 0;
-  font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-  font-variant-numeric: tabular-nums lining-nums;
-  color: theme('colors.ink');
-  background: theme('colors.paper');
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
   text-rendering: optimizeLegibility;
 }
 
-/* One focus style for everything: a green ring, the same green as the links. */
-:focus-visible {
-  outline: 2px solid theme('colors.green');
-  outline-offset: 3px;
+::selection {
+  background: #eaf6ef;
+  color: #125233;
 }
 
-@layer components {
-  .wrap {
-    @apply mx-auto w-full max-w-page px-5 sm:px-6;
-  }
-
-  .link {
-    @apply text-green underline decoration-1 underline-offset-4 transition-colors duration-150 hover:text-deepgreen hover:decoration-2;
-  }
-
-  /* Links on the dark green plaque and the dark contact block. */
-  .link-on-dark {
-    @apply text-paper underline decoration-pale decoration-1 underline-offset-4 transition-colors duration-150 hover:text-pale hover:decoration-2;
-  }
-
-  /* The one piece of motion on the page: the plaque settles in once on load. */
-  .plaque-in {
-    animation: plaque-in 500ms ease-out both;
-  }
-
-  /* The room number in the hero: Archivo pulled wide and heavy, like a sign. */
-  .room-number {
-    font-stretch: 112%;
-  }
-
-  /* Newspaper double rule: the masthead's 2px ink edge, a gap, then a hairline. */
-  .rule-double {
-    height: 3px;
-    border-bottom: 1px solid theme('colors.hairline');
-  }
-
-  .rule-double-up {
-    height: 3px;
-    border-top: 1px solid theme('colors.hairline');
-  }
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 18% 20%, rgba(28, 122, 75, 0.12), transparent 28%),
+    radial-gradient(circle at 82% 14%, rgba(179, 57, 57, 0.12), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.64) 0%, rgba(247, 246, 241, 0.92) 45%, rgba(234, 246, 239, 0.78) 100%);
 }
 
-@keyframes plaque-in {
+.hero-bg-shape {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(44px);
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.hero-bg-shape-top {
+  width: 18rem;
+  height: 18rem;
+  top: -6rem;
+  right: -4rem;
+  background: #86d2ad;
+}
+
+.hero-bg-shape-bottom {
+  width: 14rem;
+  height: 14rem;
+  left: -3rem;
+  bottom: -4rem;
+  background: #f5b5b5;
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(18px);
   }
+
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }
 

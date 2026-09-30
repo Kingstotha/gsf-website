@@ -1,70 +1,96 @@
-# Good Seed Fellowship website
+﻿# Good Seed Fellowship (GSF) Website
 
-The site for Good Seed Fellowship (GSF), a Friday-night Bible study for students at the
-University of South Florida under The Redeemed Christian Church of God. It is a single page
-built with Vite, React and Tailwind CSS, and deployed on Vercel from the `dist` output.
+Modern, responsive informational website for Good Seed Fellowship (GSF) built with:
 
-The page answers one question first: which Marshall Student Center room is it this Friday?
-That is computed from the dates in `src/data/events.js`, in Eastern time, so past dates
-disappear on their own.
+- React + Vite
+- Tailwind CSS
+- Reusable components
+- Mobile-first responsive design
 
-## Editing content
+## Features
 
-- `src/data/events.js` holds the dates, rooms and times, a list of Fridays with no meeting,
-  and dated footnotes. The comment at the top explains each field. Unconfirmed dates are
-  commented out at the bottom until a room is booked.
-- `src/data/siteContent.js` holds every other word on the page: the about paragraphs, the
-  two Friday entries, the questions and answers, contact details and the footer.
-- `src/data/photos.js` holds the photo strip. It renders nothing while the array is empty.
+- Sticky responsive navbar with mobile menu
+- Hero section with call-to-action buttons
+- About, Mission, Programs, Resources, FAQ, and Contact sections
+- Card-based layouts for programs and resources
+- Interactive accordion FAQ
+- Contact form UI (frontend only)
+- Smooth scrolling and subtle animations
+- Professional footer with important links
 
-### Photos
+## Project Structure
 
-Drop image files into `src/assets/photos/`, then import each one at the top of
-`src/data/photos.js` and add it to the array with alt text and a caption (the file shows an
-example). The strip appears on the page as soon as the array has an entry.
+```text
+GSF-website/
+|-- public/
+|   |-- gsf-logo.svg.png
+|-- src/
+|   |-- components/
+|   |   |-- layout/
+|   |   |   |-- Footer.jsx
+|   |   |   |-- Navbar.jsx
+|   |   |-- sections/
+|   |   |   |-- AboutSection.jsx
+|   |   |   |-- ContactSection.jsx
+|   |   |   |-- FAQSection.jsx
+|   |   |   |-- HeroSection.jsx
+|   |   |   |-- MissionSection.jsx
+|   |   |   |-- ProgramsSection.jsx
+|   |   |   |-- ResourcesSection.jsx
+|   |   |-- ui/
+|   |   |   |-- Button.jsx
+|   |   |   |-- Card.jsx
+|   |   |   |-- FAQItem.jsx
+|   |   |   |-- LogoMark.jsx
+|   |   |   |-- SectionHeader.jsx
+|   |-- data/
+|   |   |-- siteContent.js
+|   |-- App.jsx
+|   |-- index.css
+|   |-- main.jsx
+|-- .gitignore
+|-- index.html
+|-- package.json
+|-- postcss.config.js
+|-- tailwind.config.js
+|-- vite.config.js
+```
 
-## Running it
+## Prerequisites
 
-Node 18 or newer.
+Install Node.js 18+ (recommended 20+) so `node` and `npm` are available in your terminal.
+
+## Setup and Run
+
+From the project root:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the local URL Vite prints (usually `http://localhost:5173`). In development you can
-add `?now=2026-10-23T19:00` to the URL to see what the page shows at another date.
+Then open the local URL shown in the terminal (usually `http://localhost:5173`).
+
+## Build for Production
 
 ```bash
 npm run build
 npm run preview
 ```
 
-`npm run build` writes the site to `dist/`, which is what Vercel serves.
+## Where to Edit Content Quickly
 
-## Layout of the code
+Update most text and links in:
 
-```text
-src/
-  App.jsx                    page order
-  index.css                  font import, focus ring, rules
-  lib/schedule.js            Eastern-time date logic, floor from room number, formatting
-  data/
-    events.js                dates, rooms, times, off Fridays, footnotes
-    siteContent.js           all copy
-    photos.js                photo strip entries
-  components/
-    layout/Masthead.jsx      name, links, menu button, GroupMe button
-    layout/Footer.jsx
-    sections/Plaque.jsx      this Friday's room
-    sections/About.jsx
-    sections/Schedule.jsx    the fall table
-    sections/Fridays.jsx     Bible study and game night
-    sections/PhotoStrip.jsx
-    sections/Questions.jsx
-    sections/Contact.jsx
-    ui/Seal.jsx, Button.jsx, Section.jsx
-```
+- `src/data/siteContent.js`
 
-`DESIGN-PLAN.md` records the design decisions. `CONTENT-TODO.md` lists the facts the site
-still needs from the fellowship.
+You can later replace placeholders for:
+
+- GroupMe / Linktree / social links
+- Official contact details
+- Final FAQ and footer legal links
+
+## Notes
+
+- Current contact form is UI-only and does not submit to a backend.
+- The logo is a custom SVG placeholder based on your direction and can be replaced anytime with final media assets.
