@@ -30,22 +30,22 @@ export const events = [
     description: 'Join us for fellowship, worship, and community.'
   },
   {
-    title: 'Game night',
+    title: 'Bible study',
     date: '2026-10-02',
     startTime: '7:30 PM',
     endTime: '9:15 PM',
     timeZone: 'ET',
     location: 'Marshall Student Center - 3712 Columbia Room',
-    description: 'Games and food. Starts at 7:30 PM instead of the usual 7:00.'
+    description: 'Bible study starts at 7:30 PM instead of the usual 7:00.'
   },
   {
-    title: 'Bible study',
+    title: 'Game night',
     date: '2026-10-09',
     startTime: '7:00 PM',
     endTime: '8:45 PM',
     timeZone: 'ET',
     location: 'Marshall Student Center - 2703 Honors Room',
-    description: 'Join us for fellowship, worship, and community.'
+    description: 'Games, food, and fellowship in the Honors Room.'
   },
   {
     title: 'Bible study',
