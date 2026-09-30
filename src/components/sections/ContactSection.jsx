@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 function ContactRow({ label, value, href }) {
   const content = href ? (
-    <a href={href} className="break-words font-semibold text-slate-950 transition hover:text-brand-green">
+    <a href={href} className="font-semibold text-slate-950 transition [overflow-wrap:anywhere] hover:text-brand-green">
       {value}
     </a>
   ) : (
@@ -25,7 +25,7 @@ function ContactSection() {
   const { contact } = siteContent;
 
   return (
-    <section id="contact" className="scroll-mt-24 bg-slate-100 py-20 sm:py-28">
+    <section id="contact" className="scroll-mt-24 bg-slate-100 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Reach Out"
@@ -34,7 +34,7 @@ function ContactSection() {
         />
 
         <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+          <article className="min-w-0 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h3 className="text-xl font-semibold text-slate-950">Contact Details</h3>
@@ -60,7 +60,7 @@ function ContactSection() {
                   href={item.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-brand-green hover:bg-brand-greenSoft hover:text-brand-green"
+                  className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 transition duration-300 hover:border-brand-green hover:bg-brand-greenSoft hover:text-brand-green"
                 >
                   {item.label}
                 </a>
@@ -68,7 +68,7 @@ function ContactSection() {
             </div>
           </article>
 
-          <article className="relative overflow-hidden rounded-[1.75rem] bg-slate-950 p-6 text-white shadow-2xl shadow-slate-900/20 sm:p-8">
+          <article className="relative min-w-0 overflow-hidden rounded-[1.75rem] bg-brand-greenDark p-6 text-white sm:p-8">
             <div className="absolute right-0 top-0 h-32 w-32 rounded-bl-[5rem] bg-brand-green/25" />
             <div className="relative">
               <p className="text-sm font-semibold uppercase tracking-wider text-brand-greenSoft">
@@ -84,7 +84,7 @@ function ContactSection() {
                   href="https://groupme.com/join_group/113682070/e5jNFBYh"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-brand-greenSoft hover:bg-white/10"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:border-brand-greenSoft hover:bg-white/10"
                 >
                   Join our GroupMe
                 </a>
@@ -92,7 +92,7 @@ function ContactSection() {
                   href="https://www.instagram.com/goodseedfellowship?igsh=cDd6b3hjdGZhcjE0"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-brand-greenSoft hover:bg-white/10"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:border-brand-greenSoft hover:bg-white/10"
                 >
                   Instagram
                 </a>

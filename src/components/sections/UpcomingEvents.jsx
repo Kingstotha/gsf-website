@@ -1,190 +1,168 @@
 import { events } from '../../data/events';
+import { formatEventDate, getEventDate, getSchedule } from '../../lib/eventSchedule';
 import SectionHeader from '../ui/SectionHeader';
 import Button from '../ui/Button';
 
-const dateFormatter = new Intl.DateTimeFormat('en-US', {
-  weekday: 'long',
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric'
-});
-
-const monthFormatter = new Intl.DateTimeFormat('en-US', {
-  month: 'short'
-});
-
-const dayFormatter = new Intl.DateTimeFormat('en-US', {
-  day: '2-digit'
-});
-
-function getEventDate(date) {
-  return new Date(`${date}T00:00:00`);
+function ClockIcon() {
+  return (
+    <svg className="mt-0.5 h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 7v5l3 2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
 }
 
-function getTodayStart() {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return today;
+function LocationIcon() {
+  return (
+    <svg className="mt-0.5 h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" strokeLinejoin="round" />
+      <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  );
 }
 
 function EventCard({ event, isNext = false, isPast = false }) {
-  const eventDate = getEventDate(event.date);
+  const hasDate = Boolean(getEventDate(event.date));
 
   return (
     <article
-      className={`group relative overflow-hidden rounded-2xl border bg-white p-5 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-xl ${
+      className={`relative rounded-2xl border p-4 sm:p-5 ${
         isNext
-          ? 'border-brand-green/40 ring-4 ring-brand-green/10'
-          : 'border-slate-200'
-      } ${isPast ? 'opacity-70' : ''}`}
+          ? 'border-brand-green/30 bg-brand-greenSoft/50'
+          : isPast
+            ? 'border-slate-200 bg-slate-50/70'
+            : 'border-slate-200 bg-white'
+      }`}
     >
-      <div
-        className={`absolute inset-x-0 top-0 h-1 ${
-          isNext ? 'bg-brand-green' : 'bg-slate-200'
-        }`}
-        aria-hidden="true"
-      />
-
-      <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-        <div
-          className={`flex w-full shrink-0 items-center justify-between rounded-xl border px-4 py-3 sm:w-24 sm:flex-col sm:justify-center ${
-            isNext
-              ? 'border-brand-green/30 bg-brand-greenSoft text-brand-greenDark'
-              : 'border-slate-200 bg-slate-50 text-slate-700'
-          }`}
-        >
-          <span className="text-xs font-bold uppercase tracking-widest">
-            {monthFormatter.format(eventDate)}
+      <div className="flex items-start gap-4 sm:gap-5">
+        {hasDate ? (
+          <time
+            dateTime={event.date}
+            aria-label={formatEventDate(event.date)}
+            className={`flex w-16 shrink-0 flex-col items-center rounded-xl py-3 ${
+              isNext ? 'bg-brand-green text-white' : 'bg-brand-greenSoft text-brand-greenDark'
+            }`}
+          >
+            <span className="text-[10px] font-semibold uppercase tracking-[0.14em]">
+              {formatEventDate(event.date, { month: 'short' })}
+            </span>
+            <span className="my-1 font-serif text-2xl font-black leading-none">
+              {formatEventDate(event.date, { day: '2-digit' })}
+            </span>
+            <span className="text-[10px] font-medium uppercase tracking-wider">
+              {formatEventDate(event.date, { weekday: 'short' })}
+            </span>
+          </time>
+        ) : (
+          <span className="flex w-16 shrink-0 items-center justify-center rounded-xl bg-slate-100 py-5 text-xs font-semibold text-slate-600">
+            TBA
           </span>
-          <span className="font-serif text-3xl font-black leading-none">
-            {dayFormatter.format(eventDate)}
-          </span>
-        </div>
+        )}
 
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+            <h3 className="text-lg font-semibold leading-7 text-slate-950">
+              {event.title || 'Fellowship meeting'}
+            </h3>
             {isNext ? (
-              <span className="rounded-full bg-brand-green px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                Next Up
-              </span>
-            ) : null}
-            {isPast ? (
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                Past
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/15 bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-brand-greenDark">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-green" aria-hidden="true" />
+                Next gathering
               </span>
             ) : null}
           </div>
+          {!hasDate ? <p className="mt-1 text-sm text-slate-600">Date to be announced</p> : null}
 
-          <h3 className="mt-3 text-xl font-semibold text-slate-950">
-            {event.title}
-          </h3>
-          {event.description ? (
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              {event.description}
-            </p>
-          ) : null}
-
-          <dl className="mt-5 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
-            <div className="rounded-xl bg-slate-50 p-3">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                Date
-              </dt>
-              <dd className="mt-1 font-medium text-slate-900">
-                {dateFormatter.format(eventDate)}
+          <dl className="mt-2 space-y-1.5 text-sm leading-6 text-slate-600">
+            <div className="flex items-start gap-2">
+              <ClockIcon />
+              <dt className="sr-only">Time</dt>
+              <dd className="font-medium text-slate-800">
+                {event.startTime && event.endTime
+                  ? `${event.startTime} – ${event.endTime} ${event.timeZone || 'ET'}`
+                  : 'Time to be announced'}
               </dd>
             </div>
-            <div className="rounded-xl bg-slate-50 p-3">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                Time
-              </dt>
-              <dd className="mt-1 font-medium text-slate-900">
-                {event.startTime} - {event.endTime} {event.timeZone}
-              </dd>
-            </div>
-            <div className="rounded-xl bg-slate-50 p-3 sm:col-span-2">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                Location
-              </dt>
-              <dd className="mt-1 font-medium text-slate-900">
-                {event.location}
-              </dd>
+            <div className="flex items-start gap-2">
+              <LocationIcon />
+              <dt className="sr-only">Location</dt>
+              <dd>{event.location || 'Location to be announced'}</dd>
             </div>
           </dl>
+          {event.description ? (
+            <p className="mt-2 text-xs leading-5 text-slate-500">{event.description}</p>
+          ) : null}
         </div>
       </div>
     </article>
   );
 }
 
-function UpcomingEvents() {
-  const today = getTodayStart();
-  const sortedEvents = [...events].sort(
-    (a, b) => getEventDate(a.date) - getEventDate(b.date)
-  );
-  const upcomingEvents = sortedEvents.filter((event) => getEventDate(event.date) >= today);
-  const pastEvents = sortedEvents.filter((event) => getEventDate(event.date) < today);
-  const nextEventDate = upcomingEvents[0]?.date;
+function UpcomingEvents({ now }) {
+  const { upcoming: upcomingEvents, past: pastEvents } = getSchedule(events, now);
+  const nextEvent = upcomingEvents.find((event) => getEventDate(event.date));
 
   return (
-    <section id="events" className="scroll-mt-24 bg-white py-20 sm:py-28">
+    <section id="events" className="scroll-mt-24 bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
           <div className="lg:sticky lg:top-28">
             <SectionHeader
               eyebrow="Upcoming Events"
               title="Gather With Good Seed"
               description="Find the next fellowship meeting and room location at a glance."
             />
-            <div className="rounded-2xl border border-brand-green/20 bg-brand-greenSoft p-5">
-              <p className="text-sm font-semibold text-brand-greenDark">
-                Meetings are open to students who want Christian fellowship, worship, and community on campus.
+            <div className="rounded-2xl border border-brand-green/15 bg-brand-greenSoft/60 p-6">
+              <p className="font-serif text-lg font-bold text-brand-greenDark">Your first time? You're welcome here.</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Meet other USF students for faith, conversation, and community. Check each meeting's time and room before you head over.
               </p>
-              <div className="mt-4 flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Button href="#contact" className="justify-center">
-                  Ask a Question
-                </Button>
-                <Button href="#resources" variant="secondary" className="justify-center bg-white">
-                  Stay Updated
-                </Button>
-              </div>
+              <Button href="#contact" variant="secondary" className="mt-5">
+                Ask a Question
+                <span className="ml-2" aria-hidden="true">↗</span>
+              </Button>
             </div>
           </div>
 
-          <div className="space-y-4">
-            {upcomingEvents.length > 0 ? (
-              upcomingEvents.map((event) => (
-                <EventCard
-                  key={`${event.date}-${event.location}`}
-                  event={event}
-                  isNext={event.date === nextEventDate}
-                />
-              ))
-            ) : (
-              <div className="rounded-2xl border border-dashed border-brand-green/30 bg-brand-greenSoft/60 p-8 text-center">
-                <h3 className="text-xl font-semibold text-slate-950">
-                  No upcoming events are posted yet.
-                </h3>
-                <p className="mx-auto mt-3 max-w-lg text-sm leading-6 text-slate-700">
-                  Check back soon, or join our GroupMe and follow Instagram for the latest Good Seed Fellowship updates.
-                </p>
-              </div>
-            )}
+          <div>
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-4">
+              <p className="text-sm font-semibold text-slate-900">Fall 2026 gatherings</p>
+              <p className="text-xs text-slate-500">All times Eastern</p>
+            </div>
+            <div className="space-y-3">
+              {upcomingEvents.length > 0 ? (
+                upcomingEvents.map((event, index) => (
+                  <EventCard
+                    key={`${event.date}-${event.location}-${index}`}
+                    event={event}
+                    isNext={event === nextEvent}
+                  />
+                ))
+              ) : (
+                <div className="rounded-2xl border border-dashed border-brand-green/30 bg-brand-greenSoft/60 p-8">
+                  <h3 className="text-lg font-semibold text-slate-950">No upcoming dates posted yet.</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    The posted schedule has wrapped up. Join our GroupMe or follow Instagram for the next Good Seed Fellowship dates.
+                  </p>
+                  <Button href="#resources" variant="secondary" className="mt-5">Stay Connected</Button>
+                </div>
+              )}
+            </div>
 
             {pastEvents.length > 0 ? (
-              <div className="pt-4">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                  Past Events
-                </p>
-                <div className="space-y-4">
-                  {pastEvents.map((event) => (
-                    <EventCard
-                      key={`${event.date}-${event.location}`}
-                      event={event}
-                      isPast
-                    />
+              <details className="group mt-6 border-t border-slate-200 pt-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg py-2 text-sm font-medium text-slate-600 transition hover:text-brand-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-4 [&::-webkit-details-marker]:hidden">
+                  Past meetings ({pastEvents.length})
+                  <svg className="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                    <path d="m5 7.5 5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </summary>
+                <div className="mt-3 space-y-3">
+                  {[...pastEvents].reverse().map((event, index) => (
+                    <EventCard key={`${event.date}-${event.location}-${index}`} event={event} isPast />
                   ))}
                 </div>
-              </div>
+              </details>
             ) : null}
           </div>
         </div>

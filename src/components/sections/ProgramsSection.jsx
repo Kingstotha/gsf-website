@@ -4,7 +4,7 @@ import Card from '../ui/Card';
 
 function ProgramsSection() {
   return (
-    <section id="programs" className="scroll-mt-24 bg-slate-50 py-20 sm:py-28">
+    <section id="programs" className="scroll-mt-24 bg-slate-50 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="What We Offer"

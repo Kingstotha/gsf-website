@@ -22,35 +22,42 @@ body {
   color: #125233;
 }
 
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+a, button, summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid #348b5c;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 0.75rem;
+  background: #125233;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .hero-pattern {
+  background-color: #f8faf6;
   background-image:
-    radial-gradient(circle at 18% 20%, rgba(28, 122, 75, 0.12), transparent 28%),
-    radial-gradient(circle at 82% 14%, rgba(179, 57, 57, 0.12), transparent 24%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.64) 0%, rgba(247, 246, 241, 0.92) 45%, rgba(234, 246, 239, 0.78) 100%);
-}
-
-.hero-bg-shape {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(44px);
-  opacity: 0.42;
-  pointer-events: none;
-}
-
-.hero-bg-shape-top {
-  width: 18rem;
-  height: 18rem;
-  top: -6rem;
-  right: -4rem;
-  background: #86d2ad;
-}
-
-.hero-bg-shape-bottom {
-  width: 14rem;
-  height: 14rem;
-  left: -3rem;
-  bottom: -4rem;
-  background: #f5b5b5;
+    radial-gradient(ellipse at 90% 20%, rgba(28, 122, 75, 0.08), transparent 55%),
+    linear-gradient(120deg, #fbfaf7, #f1f7f1);
 }
 
 .fade-up {
